@@ -53,32 +53,21 @@ class Application extends App implements IBootstrap {
 
     public function __construct(array $urlParams = []) {
         parent::__construct(self::APP_ID, $urlParams);
-
-        // retrieve harmonization mode
-        $mode = \OC::$server->getConfig()->getAppValue(Application::APP_ID, 'harmonization_mode');
-        $appmanager = $this->getContainer()->get(IAppManager::class);
-        $contacts = $appmanager->isInstalled('contacts');
-        $calendar = $appmanager->isInstalled('calendar');
-
-        // register notifications
-        $manager = $this->getContainer()->get(INotificationManager::class);
-        $manager->registerNotifierService(Notifier::class);
-        // register event handlers
-        $dispatcher = $this->getContainer()->get(IEventDispatcher::class);
-        $dispatcher->addServiceListener(UserDeletedEvent::class, UserDeletedListener::class);
-
-        if ($contacts == true) {
-            $dispatcher->addServiceListener(AddressBookDeletedEvent::class, AddressBookDeletedListener::class);
-        }
-        
-        if ($calendar == true) {
-            $dispatcher->addServiceListener(CalendarDeletedEvent::class, CalendarDeletedListener::class);
-        }
     }
 
     public function register(IRegistrationContext $context): void {
+        $context->registerNotifierService(Notifier::class);
     }
 
     public function boot(IBootContext $context): void {
+        $context->injectFn(function (IEventDispatcher $dispatcher, IAppManager $appmanager) {
+            $dispatcher->addServiceListener(UserDeletedEvent::class, UserDeletedListener::class);
+            if ($appmanager->isInstalled('contacts')) {
+                $dispatcher->addServiceListener(AddressBookDeletedEvent::class, AddressBookDeletedListener::class);
+            }
+            if ($appmanager->isInstalled('calendar')) {
+                $dispatcher->addServiceListener(CalendarDeletedEvent::class, CalendarDeletedListener::class);
+            }
+        });
     }
 }

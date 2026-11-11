@@ -81,7 +81,7 @@ class LocalTasksService {
         $this->TasksUtile = $TasksUtile;
 	}
 
-    public function configure($configuration, CalDavBackend $DataStore, LazyUserFolder $FileStore = null) : void {
+    public function configure($configuration, CalDavBackend $DataStore, ?LazyUserFolder $FileStore = null) : void {
 		
 		// assign configuration
 		$this->Configuration = $configuration;

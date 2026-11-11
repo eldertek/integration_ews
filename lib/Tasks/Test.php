@@ -32,8 +32,8 @@ try {
 	$executionMode = 'S';
 	$uid = null;
 
-	$logger = \OC::$server->getLogger();
-	$config = \OC::$server->getConfig();
+	$logger = \OCP\Server::get(\Psr\Log\LoggerInterface::class);
+	$config = \OCP\Server::get(\OCP\IConfig::class);
 
 	// evaluate if script was started from console
 	if (php_sapi_name() == 'cli') {

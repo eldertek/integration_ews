@@ -31,8 +31,8 @@ class ContactPhotoObject {
     public ?string $Data;
     
     public function __construct(
-        string $type = null,
-        string $data = null
+        ?string $type = null,
+        ?string $data = null
     ) {
         $this->Type = $type;
         $this->Data = $data;

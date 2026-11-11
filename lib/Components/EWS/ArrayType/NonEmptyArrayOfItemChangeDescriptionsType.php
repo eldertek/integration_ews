@@ -38,7 +38,7 @@ use OCA\EWS\Components\EWS\ArrayType;
 class NonEmptyArrayOfItemChangeDescriptionsType extends ArrayType
 {
     /*Constructor method with arguments*/
-    public function __construct(array $Append = null, array $Set = null, array $Delete = null)
+    public function __construct(?array $Append = null, ?array $Set = null, ?array $Delete = null)
     {
         if ($Append) {$this->AppendToItemField = $Append;}
         if ($Set) {$this->SetItemField = $Set;}

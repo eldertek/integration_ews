@@ -34,10 +34,10 @@ class TaskCollectionObject {
 
     public function __construct(
         string $id,
-        string $name = null,
-        string $state = null,
-        int $count = null,
-        string $aid = null
+        ?string $name = null,
+        ?string $state = null,
+        ?int $count = null,
+        ?string $aid = null
     ) {
         $this->Id = $id;
         $this->Name = $name;

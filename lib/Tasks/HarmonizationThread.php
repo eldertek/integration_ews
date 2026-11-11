@@ -34,7 +34,7 @@ try {
 	$executionPause = 60;
 	$uid = null;
 
-	$logger = \OC::$server->getLogger();
+	$logger = \OCP\Server::get(\Psr\Log\LoggerInterface::class);
 
 	// evaluate if script was started from console
 	if (php_sapi_name() == 'cli') {
@@ -96,14 +96,14 @@ try {
 	}
 
 	// evaluate if nextcloud is installed
-	if (!(bool) \OC::$server->getConfig()->getSystemValue('installed', false)) {
+	if (!(bool) \OCP\Server::get(\OCP\IConfig::class)->getSystemValue('installed', false)) {
 		$logger->info("Harmonization thread failed system installed status is false", ['app' => 'integration_ews']);
 		echo "Harmonization thread failed system installed status is false" . PHP_EOL;
 		exit(0);
 	}
 
 	// evaluate if nextcloud is in maintenance mode
-	if ((bool) \OC::$server->getSystemConfig()->getValue('maintenance', false)) {
+	if ((bool) \OCP\Server::get(\OCP\IConfig::class)->getSystemValue('maintenance', false)) {
 		$logger->info("Harmonization thread failed system maintenance mode is on", ['app' => 'integration_ews']);
 		echo "Harmonization thread failed system maintenance mode is on" . PHP_EOL;
 		exit(0);
@@ -162,7 +162,7 @@ try {
 		 * 
 		 */
 		// evaluate if nextcloud is in maintenance mode
-		if ((bool) \OC::$server->getSystemConfig()->getValue('maintenance', false)) {
+		if ((bool) \OCP\Server::get(\OCP\IConfig::class)->getSystemValue('maintenance', false)) {
 			$executionConclusion = 'EM';
 			break;
 		}

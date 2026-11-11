@@ -154,7 +154,7 @@ class EWSClientMock extends \SoapClient
      * 
      * @return string|null              
      */
-    public function __doRequest($request, $location, $action, $version, $unidirectional = 0): null|string {
+    public function __doRequest(string $request, string $location, string $action, int $version, bool $oneWay = false, ?string $uriParserClass = null): ?string {
 
         // retrieve the action
         $action = substr($action, strrpos($action, '/') + 1);

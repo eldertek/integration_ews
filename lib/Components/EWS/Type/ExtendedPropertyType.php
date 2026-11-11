@@ -37,7 +37,7 @@ use OCA\EWS\Components\EWS\Type;
 class ExtendedPropertyType extends Type
 {
     /*Constructor method with arguments*/
-    public function __construct(object $ExtendedFieldURI = null, string $Value = null)
+    public function __construct(?object $ExtendedFieldURI = null, ?string $Value = null)
     {
         $this->ExtendedFieldURI = $ExtendedFieldURI;
         $this->Value = $Value;

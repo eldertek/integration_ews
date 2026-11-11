@@ -37,7 +37,7 @@ use OCA\EWS\Components\EWS\ArrayType;
 class NonEmptyArrayOfItemIdsType extends ArrayType
 {
     /*Constructor method with arguments*/
-    public function __construct(array $ItemIds = null)
+    public function __construct(?array $ItemIds = null)
     {
         if ($ItemIds) {$this->ItemId = $ItemIds;}
     }

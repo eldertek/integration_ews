@@ -36,13 +36,13 @@ class TaskAttachmentObject {
     public ?string $Data;
     
     public function __construct(
-        string $store = null,
-        string $id = null, 
-        string $name = null, 
-        string $type = null,
-        string $encoding = null,
-        string $size = null,
-        string $data = null
+        ?string $store = null,
+        ?string $id = null, 
+        ?string $name = null, 
+        ?string $type = null,
+        ?string $encoding = null,
+        ?string $size = null,
+        ?string $data = null
     ) {
         $this->Store = $store;
         $this->Id = $id;

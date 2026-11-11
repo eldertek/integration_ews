@@ -30,8 +30,8 @@ class EventOrganizerObject {
     public ?string $Name = null;
 
     public function __construct(
-        string $Address = null,
-        string $Name = null
+        ?string $Address = null,
+        ?string $Name = null
     ) {
         $this->Address = $Address;
         $this->Name = $Name;

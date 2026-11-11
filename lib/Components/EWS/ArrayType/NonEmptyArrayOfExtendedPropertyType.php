@@ -37,7 +37,7 @@ use OCA\EWS\Components\EWS\ArrayType;
 class NonEmptyArrayOfExtendedPropertyType extends ArrayType
 {
     
-    public function __construct(array $e = null)
+    public function __construct(?array $e = null)
     {
         if (isset($e)) {$this->ExtendedProperty = $e;}
     }

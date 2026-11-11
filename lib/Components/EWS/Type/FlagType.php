@@ -35,7 +35,7 @@ use OCA\EWS\Components\EWS\Type;
 class FlagType extends Type
 {
     /*Constructor method with arguments*/
-    public function __construct(string $FlagStatus = null, string $StartDate = null, string $DueDate = null, string $CompleteDate = null)
+    public function __construct(?string $FlagStatus = null, ?string $StartDate = null, ?string $DueDate = null, ?string $CompleteDate = null)
     {
         $this->FlagStatus = $FlagStatus;
         $this->StartDate = $StartDate;

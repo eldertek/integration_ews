@@ -310,7 +310,7 @@ class EWSClient extends \SoapClient
      * 
      * @return string|null              
      */
-    public function __doRequest($request, $location, $action, $version, $unidirectional = 0): null|string {
+    public function __doRequest(string $request, string $location, string $action, int $version, bool $oneWay = false, ?string $uriParserClass = null): ?string {
 
         // evaluate if http client is initilized and location is the same
         if (!isset($this->_client) || curl_getinfo($this->_client, CURLINFO_EFFECTIVE_URL) != $location) {

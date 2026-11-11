@@ -48,7 +48,7 @@ class PathToExtendedFieldType extends BasePathToElementType
         ?string $id = null,
         ?string $name = null,
         ?string $tag = null,
-        string $type = null)
+        ?string $type = null)
     {
         $this->DistinguishedPropertySetId = $dsid;
         $this->PropertySetId = $psid;

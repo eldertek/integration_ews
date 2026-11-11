@@ -37,7 +37,7 @@ use OCA\EWS\Components\EWS\Type;
 class ConstantValueType extends Type
 {
     /*Constructor method with arguments*/
-    public function __construct(string $Value = null)
+    public function __construct(?string $Value = null)
     {
         $this->Value = $Value;
     }

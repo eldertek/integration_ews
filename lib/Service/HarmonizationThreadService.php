@@ -131,7 +131,7 @@ class HarmonizationThreadService {
 	 * 
 	 * @return array thread of thread id's
 	 */
-	public function list(string $uid = null): array {
+	public function list(?string $uid = null): array {
 		
 		// caputre 
 		$pattern = '/(?<ThreadUser>[a-zA-Z0-9-_+]+)\s+(?<ThreadId>\d{1,10000}+).*HarmonizationThread\.php\s+-u(?<NcUser>[a-zA-Z0-9-_+@.]+)[\s|$]+/iu';

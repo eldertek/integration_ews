@@ -31,8 +31,8 @@ class EventNotificationObject {
     public $When = null;
 
     public function __construct(
-        string $Type = null,
-        string $Pattern = null,
+        ?string $Type = null,
+        ?string $Pattern = null,
         mixed $When = null
     ) {
         $this->Type = $Type;

@@ -36,7 +36,7 @@ namespace OCA\EWS\Components\EWS\Type;
 class FolderIdType extends BaseFolderIdType
 {
     /*Constructor method with arguments*/
-    public function __construct(string $Id = null, string $ChangeKey = null)
+    public function __construct(?string $Id = null, ?string $ChangeKey = null)
     {
         $this->Id = $Id;
         $this->ChangeKey = $ChangeKey;

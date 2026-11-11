@@ -95,7 +95,7 @@ class EventObject {
         $this->Journaling = true;
     }
 
-    public function addAttachment(string $store, string $id = null, ?string $name = null, ?string $type = null, ?string $encoding = null, ?string $size = null, ?string $data = null) {
+    public function addAttachment(string $store, ?string $id = null, ?string $name = null, ?string $type = null, ?string $encoding = null, ?string $size = null, ?string $data = null) {
         $this->Attachments[] = new EventAttachmentObject($store, $id, $name, $type, $encoding, $size, $data);
     }
 

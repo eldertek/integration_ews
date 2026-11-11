@@ -37,7 +37,7 @@ use OCA\EWS\Components\EWS\Type;
 class ItemChangeType extends Type
 {
     /*Constructor method with arguments*/
-    public function __construct(object $Id = null, object $Updates = null)
+    public function __construct(?object $Id = null, ?object $Updates = null)
     {
         $this->ItemId = $Id;
         $this->Updates = $Updates;

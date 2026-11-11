@@ -40,12 +40,12 @@ use OCA\EWS\Components\EWS\Type;
 class PhysicalAddressDictionaryEntryType extends Type
 {
     /*Constructor method with arguments*/
-    public function __construct(string $Key = null,
-                                string $Street = null,
-                                string $City = null,
-                                string $State = null,
-                                string $PostalCode = null,
-                                string $CountryOrRegion = null)
+    public function __construct(?string $Key = null,
+                                ?string $Street = null,
+                                ?string $City = null,
+                                ?string $State = null,
+                                ?string $PostalCode = null,
+                                ?string $CountryOrRegion = null)
     {
         $this->Key = $Key;
         $this->Street = $Street;

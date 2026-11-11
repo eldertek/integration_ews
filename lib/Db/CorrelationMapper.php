@@ -94,7 +94,7 @@ class CorrelationMapper extends QBMapper {
 	 * 
 	 * @return Correlation
 	 */
-	public function findByLocalId(string $uid, string $type, string $loid, string $lcid = null): Correlation {
+	public function findByLocalId(string $uid, string $type, string $loid, ?string $lcid = null): Correlation {
 		
 		// construct data store command
 		$qb = $this->db->getQueryBuilder();
@@ -128,7 +128,7 @@ class CorrelationMapper extends QBMapper {
 	 * 
 	 * @return Correlation
 	 */
-	public function findByRemoteId(string $uid, string $type, string $roid, string $rcid = null): Correlation {
+	public function findByRemoteId(string $uid, string $type, string $roid, ?string $rcid = null): Correlation {
 		
 		// construct data store command
 		$qb = $this->db->getQueryBuilder();

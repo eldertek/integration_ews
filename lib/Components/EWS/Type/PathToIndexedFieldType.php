@@ -35,7 +35,7 @@ namespace OCA\EWS\Components\EWS\Type;
 class PathToIndexedFieldType extends BasePathToElementType
 {
     /*Constructor method with arguments*/
-    public function __construct(string $uri, string $index = null)
+    public function __construct(string $uri, ?string $index = null)
     {
         $this->FieldURI = $uri;
         $this->FieldIndex = $index;

@@ -35,7 +35,7 @@ namespace OCA\EWS\Components\EWS\Type;
 class PathToUnindexedFieldType extends BasePathToElementType
 {
     /*Constructor method with arguments*/
-    public function __construct(string $uri = null)
+    public function __construct(?string $uri = null)
     {
         $this->FieldURI = $uri;
     }

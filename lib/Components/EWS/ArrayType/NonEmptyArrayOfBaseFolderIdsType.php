@@ -38,7 +38,7 @@ use OCA\EWS\Components\EWS\ArrayType;
 class NonEmptyArrayOfBaseFolderIdsType extends ArrayType
 {
 
-    public function __construct(array $n = null, array $d = null)
+    public function __construct(?array $n = null, ?array $d = null)
     {
         if (isset($n)) {$this->FolderId = $n;}
         if (isset($d)) {$this->DistinguishedFolderId = $d;}

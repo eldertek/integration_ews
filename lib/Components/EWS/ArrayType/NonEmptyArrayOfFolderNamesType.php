@@ -37,7 +37,7 @@ use OCA\EWS\Components\EWS\ArrayType;
 class NonEmptyArrayOfFolderNamesType extends ArrayType
 {
     
-    public function __construct(array $f = null)
+    public function __construct(?array $f = null)
     {
         if (isset($f)) {$this->FolderName = $f;}
     }

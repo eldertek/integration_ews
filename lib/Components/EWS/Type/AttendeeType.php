@@ -37,7 +37,7 @@ use OCA\EWS\Components\EWS\Type;
 class AttendeeType extends Type
 {
     /*Constructor method with arguments*/
-    public function __construct(object $Mailbox = null, string $Response = null)
+    public function __construct(?object $Mailbox = null, ?string $Response = null)
     {
         $this->Mailbox = $Mailbox;
         $this->ResponseType = $Response;

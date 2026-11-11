@@ -35,7 +35,7 @@ namespace OCA\EWS\Components\EWS\Type;
 class RequestAttachmentIdType extends BaseItemIdType
 {
     /*Constructor method with arguments*/
-    public function __construct(string $Id = null)
+    public function __construct(?string $Id = null)
     {
         $this->Id = $Id;
     }

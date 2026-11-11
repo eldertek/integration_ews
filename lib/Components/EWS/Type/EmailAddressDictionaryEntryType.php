@@ -40,7 +40,7 @@ use OCA\EWS\Components\EWS\Type;
 class EmailAddressDictionaryEntryType extends Type
 {
     /*Constructor method with arguments*/
-    public function __construct(string $Key = null, string $Address = null, string $Name = null)
+    public function __construct(?string $Key = null, ?string $Address = null, ?string $Name = null)
     {
         $this->Key = $Key;
         $this->_ = $Address;

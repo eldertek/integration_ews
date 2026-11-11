@@ -39,7 +39,7 @@ use OCA\EWS\Components\EWS\ArrayType;
 class NonEmptyArrayOfBaseItemIdsType extends ArrayType
 {
     
-    public function __construct(array $i = null, array $o = null, array $ri = null, array $rr = null)
+    public function __construct(?array $i = null, ?array $o = null, ?array $ri = null, ?array $rr = null)
     {
         if (isset($i)) {$this->ItemId = $i;}
         if (isset($o)) {$this->OccurrenceItemId = $o;}

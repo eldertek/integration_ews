@@ -35,7 +35,7 @@ namespace OCA\EWS\Components\EWS\Type;
 class EmailAddressType extends BaseEmailAddressType
 {
     /*Constructor method with arguments*/
-    public function __construct(string $Address = null, string $Name = null)
+    public function __construct(?string $Address = null, ?string $Name = null)
     {
         $this->EmailAddress = $Address;
         $this->Name = $Name;

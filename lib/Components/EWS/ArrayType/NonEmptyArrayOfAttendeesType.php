@@ -37,7 +37,7 @@ use OCA\EWS\Components\EWS\ArrayType;
 class NonEmptyArrayOfAttendeesType extends ArrayType
 {
 
-    public function __construct(array $a = null)
+    public function __construct(?array $a = null)
     {
         if (isset($a)) {
             $this->Attendee = $a;

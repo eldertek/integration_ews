@@ -36,13 +36,13 @@ class ContactAttachmentObject {
     public ?string $Data;
     
     public function __construct(
-        string $id = null,
-        string $name = null,
-        string $type = null,
-        string $encoding = null,
-        string $flag = null,
-        string $size = null,
-        string $data = null
+        ?string $id = null,
+        ?string $name = null,
+        ?string $type = null,
+        ?string $encoding = null,
+        ?string $flag = null,
+        ?string $size = null,
+        ?string $data = null
     ) {
         $this->Id = $id;
         $this->Name = $name;

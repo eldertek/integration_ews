@@ -86,7 +86,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		Folder Object on success / Null on failure
 	 */
-	public function fetchFolders(EWSClient $DataStore, string $base = 'D', object $additional = null): ?object {
+	public function fetchFolders(EWSClient $DataStore, string $base = 'D', ?object $additional = null): ?object {
 		
 		// construct the request
 		$request = new \OCA\EWS\Components\EWS\Type\FindFolderType();
@@ -150,7 +150,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		Folder Object on success / Null on failure
 	 */
-	public function fetchFoldersByType(EWSClient $DataStore, string $type, string $base = 'D', object $additional = null, string $source = 'U'): ?object {
+	public function fetchFoldersByType(EWSClient $DataStore, string $type, string $base = 'D', ?object $additional = null, string $source = 'U'): ?object {
 		
 		// construct request
 		$request = new \OCA\EWS\Components\EWS\Request\FindFolderType();
@@ -229,7 +229,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		Folder Object on success / Null on failure
 	 */
-	public function fetchFolder(EWSClient $DataStore, string $fid, bool $ftype = false, string $base = 'D', object $additional = null): ?object {
+	public function fetchFolder(EWSClient $DataStore, string $fid, bool $ftype = false, string $base = 'D', ?object $additional = null): ?object {
 		
 		// construct request
 		$request = new \OCA\EWS\Components\EWS\Request\GetFolderType();
@@ -355,7 +355,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		True on success / False on failure
 	 */
-	public function deleteFolder(EWSClient $DataStore, array $batch = null, string $type = 'SoftDelete'): ?bool {
+	public function deleteFolder(EWSClient $DataStore, ?array $batch = null, string $type = 'SoftDelete'): ?bool {
 		
 		// construct request
 		$request = new \OCA\EWS\Components\EWS\Request\DeleteFolderType();
@@ -406,7 +406,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		Folder Changes Object on success / Null on failure
 	 */
-	public function fetchFolderChanges(EWSClient $DataStore, string $fid, string $state, bool $ftype = false, int $max = 512, string $base = 'I', object $additional = null): object {
+	public function fetchFolderChanges(EWSClient $DataStore, string $fid, string $state, bool $ftype = false, int $max = 512, string $base = 'I', ?object $additional = null): object {
 		
 		// construct request
 		$request = new \OCA\EWS\Components\EWS\Request\SyncFolderItemsType();
@@ -520,7 +520,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		Item Object on success / Null on failure
 	 */
-	public function fetchItems(EWSClient $DataStore, string $fid, bool $ftype = false, int $ioffset = 0, int $ilimit = 512, string $base = 'I', object $additional = null): ?object {
+	public function fetchItems(EWSClient $DataStore, string $fid, bool $ftype = false, int $ioffset = 0, int $ilimit = 512, string $base = 'I', ?object $additional = null): ?object {
 		
 		// construct request
 		$request = new \OCA\EWS\Components\EWS\Request\FindItemType();
@@ -592,7 +592,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		Item Object on success / Null on failure
 	 */
-	public function findItem(EWSClient $DataStore, string $fid, object $restriction, bool $ftype = false, string $base = 'D', object $additional = null): ?object {
+	public function findItem(EWSClient $DataStore, string $fid, object $restriction, bool $ftype = false, string $base = 'D', ?object $additional = null): ?object {
 		
 		// construct request
 		$request = new \OCA\EWS\Components\EWS\Request\FindItemType();
@@ -704,7 +704,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		Item Object on success / Null on failure
 	 */
-	public function findItemByUUID(EWSClient $DataStore, string $fid, string $uuid, bool $ftype = false, string $base = 'D', object $additional = null): ?object {
+	public function findItemByUUID(EWSClient $DataStore, string $fid, string $uuid, bool $ftype = false, string $base = 'D', ?object $additional = null): ?object {
 		
 		// construct request
 		$request = new \OCA\EWS\Components\EWS\Request\FindItemType();
@@ -823,7 +823,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		Item Object on success / Null on failure
 	 */
-	public function fetchItem(EWSClient $DataStore, array $ioc, string $base = 'D', object $additional = null): ?object {
+	public function fetchItem(EWSClient $DataStore, array $ioc, string $base = 'D', ?object $additional = null): ?object {
 		
 		// construct request
 		$request = new \OCA\EWS\Components\EWS\Request\GetItemType();
@@ -981,7 +981,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		Items Array on success / Null on failure
 	 */
-	public function updateItem(EWSClient $DataStore, string $fid, string $iid, string $istate = null, array $additions = null, array $modifications = null, array $deletions = null): ?object {
+	public function updateItem(EWSClient $DataStore, string $fid, string $iid, ?string $istate = null, ?array $additions = null, ?array $modifications = null, ?array $deletions = null): ?object {
 		
 		// construct request
 		$request = new \OCA\EWS\Components\EWS\Request\UpdateItemType();
@@ -1030,7 +1030,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		Attachement Collection Object on success / Null on failure
 	 */
-	public function deleteItem(EWSClient $DataStore, array $ids = null, string $type = 'SoftDelete', array $options = []): ?bool {
+	public function deleteItem(EWSClient $DataStore, ?array $ids = null, string $type = 'SoftDelete', array $options = []): ?bool {
 		
 		// construct request
 		$request = new \OCA\EWS\Components\EWS\Request\DeleteItemType();
@@ -1205,7 +1205,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		Item Object on success / Null on failure
 	 */
-	public function fetchTimeZone(EWSClient $DataStore, string $zone = null): ?object {
+	public function fetchTimeZone(EWSClient $DataStore, ?string $zone = null): ?object {
 		
 		// construct request
 		$request = new \OCA\EWS\Components\EWS\Request\GetServerTimeZonesType();
@@ -1246,7 +1246,7 @@ class RemoteCommonService {
 	 * @return object
 	 * 		Items Object on success / Null on failure
 	 */
-	public function connectEvents(EWSClient $DataStore, int $duration, array $ids = null, array $dids = null, array $types = null): ?object {
+	public function connectEvents(EWSClient $DataStore, int $duration, ?array $ids = null, ?array $dids = null, ?array $types = null): ?object {
 		
 		// construct request
 		$request = new \OCA\EWS\Components\EWS\Request\SubscribeType();

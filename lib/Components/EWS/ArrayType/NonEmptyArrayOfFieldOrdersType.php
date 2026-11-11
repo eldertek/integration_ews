@@ -37,7 +37,7 @@ use OCA\EWS\Components\EWS\ArrayType;
 class NonEmptyArrayOfFieldOrdersType extends ArrayType
 {
     
-    public function __construct(array $o = null)
+    public function __construct(?array $o = null)
     {
         if (isset($o)) {$this->FieldOrder = $o;}
     }

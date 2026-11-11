@@ -37,7 +37,7 @@ use OCA\EWS\Components\EWS\Type;
 class DeletedOccurrenceInfoType extends Type
 {
     /*Constructor method with arguments*/
-    public function __construct(string $Start = null)
+    public function __construct(?string $Start = null)
     {
         $this->Start = $Start;
     }

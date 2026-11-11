@@ -36,7 +36,7 @@ namespace OCA\EWS\Components\EWS\Type;
 class ItemIdType extends BaseItemIdType
 {
     /*Constructor method with arguments*/
-    public function __construct(string $Id = null, string $ChangeKey = null)
+    public function __construct(?string $Id = null, ?string $ChangeKey = null)
     {
         $this->Id = $Id;
         $this->ChangeKey = $ChangeKey;

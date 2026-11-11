@@ -76,7 +76,7 @@ class CorrelationsService {
 
 	}
 
-	public function findByLocalId(string $uid, string $type, string $loid, string $lcid = null): ?Correlation {
+	public function findByLocalId(string $uid, string $type, string $loid, ?string $lcid = null): ?Correlation {
 
 		try {
 			return $this->mapper->findByLocalId($uid, $type, $loid, $lcid);
@@ -88,7 +88,7 @@ class CorrelationsService {
 
 	}
 
-	public function findByRemoteId(string $uid, string $type, string $roid, string $rcid = null): ?Correlation {
+	public function findByRemoteId(string $uid, string $type, string $roid, ?string $rcid = null): ?Correlation {
 
 		try {
 			return $this->mapper->findByRemoteId($uid, $type, $roid, $rcid);
@@ -100,7 +100,7 @@ class CorrelationsService {
 
 	}
 
-	public function find(string $uid, string $loid, string $roid, string $pid = null): ?Correlation {
+	public function find(string $uid, string $loid, string $roid, ?string $pid = null): ?Correlation {
 
 		try {
 			return $this->mapper->find($uid, $loid, $roid, $pid);

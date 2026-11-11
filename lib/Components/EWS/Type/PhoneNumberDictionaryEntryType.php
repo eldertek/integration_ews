@@ -40,7 +40,7 @@ use OCA\EWS\Components\EWS\Type;
 class PhoneNumberDictionaryEntryType extends Type
 {
     /*Constructor method with arguments*/
-    public function __construct(string $Key = null, string $Number = null)
+    public function __construct(?string $Key = null, ?string $Number = null)
     {
         $this->Key = $Key;
         $this->_ = $Number;
